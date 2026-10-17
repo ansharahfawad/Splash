@@ -40,34 +40,49 @@
       <h1>Our Classes</h1>
     </section>
 
-    <section class="classes-list">
-      <!-- Class 1 -->
-      <article class="class-card">
-        <img src="images/placeholder-class1.jpg" alt="Parent and toddler swim class">
-        <h2>Parent & Toddler</h2>
-        <p>Ages 6 months - 3 years. Placeholder description of this class.</p>
-      </article>
+    <!-- Vue Component: Class Filter -->
+    <section id="vue-class-filter" class="vue-class-filter">
+      <div class="filter-buttons">
+        <button
+          type="button"
+          class="filter-btn"
+          v-bind:class="{ active: activeFilter === 'all' }"
+          v-on:click="setFilter('all')">
+          All Classes
+        </button>
+        <button
+          type="button"
+          class="filter-btn"
+          v-bind:class="{ active: activeFilter === 'toddler' }"
+          v-on:click="setFilter('toddler')">
+          Toddler
+        </button>
+        <button
+          type="button"
+          class="filter-btn"
+          v-bind:class="{ active: activeFilter === 'kids' }"
+          v-on:click="setFilter('kids')">
+          Kids
+        </button>
+        <button
+          type="button"
+          class="filter-btn"
+          v-bind:class="{ active: activeFilter === 'teen' }"
+          v-on:click="setFilter('teen')">
+          Teen
+        </button>
+      </div>
 
-      <!-- Class 2 -->
-      <article class="class-card">
-        <img src="images/placeholder-class2.jpg" alt="Beginner swim class for kids">
-        <h2>Beginner</h2>
-        <p>Ages 4-7. Placeholder description of this class.</p>
-      </article>
+      <div class="classes-list">
+        <article class="class-card" v-for="c in filteredClasses" v-bind:key="c.id">
+          <img v-bind:src="c.image" v-bind:alt="c.name + ' swim class'">
+          <h2>{{ c.name }}</h2>
+          <p class="age-label">{{ c.ageLabel }}</p>
+          <p>{{ c.description }}</p>
+        </article>
+      </div>
 
-      <!-- Class 3 -->
-      <article class="class-card">
-        <img src="images/placeholder-class3.jpg" alt="Intermediate swim class for kids">
-        <h2>Intermediate</h2>
-        <p>Ages 8-12. Placeholder description of this class.</p>
-      </article>
-
-      <!-- Class 4 -->
-      <article class="class-card">
-        <img src="images/placeholder-class4.jpg" alt="Advanced swim class for kids">
-        <h2>Advanced</h2>
-        <p>Ages 10+. Placeholder description of this class.</p>
-      </article>
+      <p v-if="filteredClasses.length === 0" class="no-results">No classes match this filter.</p>
     </section>
   </main>
 
@@ -114,5 +129,6 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/vue-component.js"></script>
 </body>
 </html>
