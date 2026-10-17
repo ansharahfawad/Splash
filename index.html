@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Splashes - Home</title>
+
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <h1>Splashes</h1>
+  <p>Phase 1 setup test page.</p>
+
+  <!-- TEMPORARY TEST BLOCK - remove in Phase 2 -->
+  <div id="vue-test" class="btn btn-primary">{{ message }}</div>
+  <!-- END TEMPORARY TEST BLOCK -->
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    new Vue({ el: '#vue-test', data: { message: 'Vue is working' } });
+  </script>
+
+</body>
+</html>
