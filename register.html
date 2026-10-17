@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Register your child for swim lessons at Splashes.">
+  <title>Splashes | Register</title>
+
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="index.html">Splashes</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navMain">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMain">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="classes.html">Classes</a></li>
+          <li class="nav-item"><a class="nav-link" href="schedule.html">Schedule</a></li>
+          <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+          <li class="nav-item"><a class="nav-link" href="instructors.html">Instructors</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item active">
+            <button class="btn btn-primary ml-2" data-toggle="modal" data-target="#registerModal">Register</button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-header">
+      <h1>Register for Classes</h1>
+    </section>
+
+    <section class="register-content">
+      <p>Click the Register button above, or use the form below, to sign up your child for swim lessons.</p>
+
+      <form id="registerPageForm">
+        <div class="form-group">
+          <label for="pParentName">Parent/Guardian Name</label>
+          <input type="text" class="form-control" id="pParentName" name="pParentName" required>
+        </div>
+        <div class="form-group">
+          <label for="pChildName">Child's Name</label>
+          <input type="text" class="form-control" id="pChildName" name="pChildName" required>
+        </div>
+        <div class="form-group">
+          <label for="pChildAge">Child's Age</label>
+          <input type="number" class="form-control" id="pChildAge" name="pChildAge" min="0" max="18" required>
+        </div>
+        <div class="form-group">
+          <label for="pEmail">Email</label>
+          <input type="email" class="form-control" id="pEmail" name="pEmail" required>
+        </div>
+        <div class="form-group">
+          <label for="pClass">Preferred Class</label>
+          <select class="form-control" id="pClass" name="pClass">
+            <option>Parent & Toddler</option>
+            <option>Beginner</option>
+            <option>Intermediate</option>
+            <option>Advanced</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit Registration</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Register/Sign In Modal -->
+  <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="registerModalLabel">Register / Sign In</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="registerForm">
+            <div class="form-group">
+              <label for="parentName">Parent/Guardian Name</label>
+              <input type="text" class="form-control" id="parentName" name="parentName" required>
+            </div>
+            <div class="form-group">
+              <label for="childName">Child's Name</label>
+              <input type="text" class="form-control" id="childName" name="childName" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="tel" class="form-control" id="phone" name="phone">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Splashes. All rights reserved.</p>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
