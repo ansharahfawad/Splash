@@ -1,6 +1,298 @@
-/* Splashes - Main Stylesheet */
-/* Project-specific styles will be added here in Phase 3 */
+/* ============================
+   Splashes - Main Stylesheet
+   ============================ */
+
+:root {
+  --primary-blue: #0077b6;
+  --accent-yellow: #ffd60a;
+  --light-bg: #f0f9ff;
+  --dark-text: #1a1a2e;
+  --white: #ffffff;
+}
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+  color: var(--dark-text);
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+main {
+  min-height: 70vh;
+}
+
+/* ============================
+   Header / Navbar
+   ============================ */
+.navbar {
+  background-color: var(--white) !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  padding: 1rem 2rem;
+}
+
+.navbar-brand {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--primary-blue) !important;
+}
+
+.nav-link {
+  font-weight: 500;
+  color: var(--dark-text) !important;
+  padding: 0.5rem 1rem !important;
+}
+
+.nav-link:hover {
+  color: var(--primary-blue) !important;
+}
+
+.nav-item.active .nav-link {
+  color: var(--primary-blue) !important;
+  border-bottom: 2px solid var(--primary-blue);
+}
+
+/* ============================
+   Hero Section
+   ============================ */
+.hero {
+  background: linear-gradient(135deg, var(--primary-blue), #00b4d8);
+  color: var(--white);
+  text-align: center;
+  padding: 5rem 2rem;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.hero .btn-primary {
+  background-color: var(--accent-yellow);
+  border: none;
+  color: var(--dark-text);
+  font-weight: 700;
+  padding: 0.75rem 2rem;
+}
+
+.hero .btn-primary:hover {
+  opacity: 0.9;
+}
+
+/* ============================
+   Page Header (non-home pages)
+   ============================ */
+.page-header {
+  background-color: var(--light-bg);
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.page-header h1 {
+  color: var(--primary-blue);
+  font-size: 2.2rem;
+  margin: 0;
+}
+
+/* ============================
+   Generic content sections
+   ============================ */
+.intro,
+.about-content,
+.contact-content,
+.register-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+.intro ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+}
+
+.intro li {
+  margin-bottom: 0.5rem;
+}
+
+.featured-image img,
+.about-content img {
+  width: 100%;
+  border-radius: 8px;
+  margin-top: 1.5rem;
+}
+
+/* ============================
+   Card Grids (classes, pricing, instructors)
+   ============================ */
+.classes-list,
+.pricing-list,
+.instructors-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+.class-card,
+.pricing-card,
+.instructor-card {
+  background-color: var(--white);
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease;
+}
+
+.class-card:hover,
+.pricing-card:hover,
+.instructor-card:hover {
+  transform: translateY(-4px);
+}
+
+.class-card img,
+.instructor-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.pricing-card .price {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+  margin: 0.5rem 0;
+}
+
+/* ============================
+   Schedule Table
+   ============================ */
+.schedule-table {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+.schedule-table table {
+  background-color: var(--white);
+}
+
+.schedule-table caption {
+  caption-side: top;
+  font-weight: 600;
+  padding-bottom: 0.5rem;
+}
+
+.schedule-table th {
+  background-color: var(--primary-blue);
+  color: var(--white);
+}
+
+/* ============================
+   Forms (contact, register, modal)
+   ============================ */
+form {
+  background-color: var(--white);
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.contact-content form,
+.register-content form {
+  border: 1px solid #e0e0e0;
+  margin-top: 1.5rem;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+/* ============================
+   Footer
+   ============================ */
+footer {
+  background-color: var(--dark-text);
+  color: var(--white);
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* ============================
+   Responsive Breakpoints
+   ============================ */
+
+/* Tablet */
+@media (max-width: 768px) {
+  .hero {
+    padding: 3rem 1.5rem;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .page-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .classes-list,
+  .pricing-list,
+  .instructors-list {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    padding: 2rem 1.5rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .navbar {
+    padding: 1rem;
+  }
+
+  .hero {
+    padding: 2.5rem 1rem;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .intro,
+  .about-content,
+  .contact-content,
+  .register-content,
+  .schedule-table {
+    padding: 2rem 1rem;
+  }
+
+  .classes-list,
+  .pricing-list,
+  .instructors-list {
+    grid-template-columns: 1fr;
+    padding: 1.5rem 1rem;
+  }
+
+  .schedule-table table {
+    font-size: 0.85rem;
+  }
 }
